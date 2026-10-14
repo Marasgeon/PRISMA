@@ -1,8 +1,3 @@
-import os
-from pathlib import Path
-BASE_DIR = Path(os.environ.get('PRISMA_OUT_DIR', str(Path(__file__).resolve().parent.parent / 'figures')))
-OUTPUT_PNG = BASE_DIR / 'performance_metrics_bar.png'
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -13,7 +8,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 fig.patch.set_facecolor('white')
 ax.set_facecolor('white')
 
-metrics = ['Tracking Error\n(MSE, RMSE)', 'Robustness\n(Disturbance)', 'Vibration\nSuppression', 'Steady-State\nError', 'Rise/Settling\nTime', 'Energy\nConsumption']
+metrics = ['Tracking Error\n(RMSE,\n error bounds,\n error-evolution plots)', 'Robustness\n(Disturbance)', 'Vibration\nSuppression', 'Steady-State\nError', 'Rise/Settling\nTime', 'Energy\nConsumption']
 counts = [7, 10, 0, 0, 0, 0]
 colors_bar = [PROFESSIONAL_COLORS[i] for i in range(len(metrics))]
 bars = ax.bar(range(len(metrics)), counts, color=colors_bar, edgecolor=TEXT_COLOR, linewidth=1.5, width=0.6)
@@ -29,6 +24,6 @@ for spine in ax.spines.values():
 for bar, count in zip(bars, counts):
     ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.15, str(count), ha='center', va='bottom', color=TEXT_COLOR, fontweight='bold', fontsize=13)
 plt.tight_layout()
-plt.savefig(OUTPUT_PNG, dpi=150, bbox_inches='tight', facecolor='white')
+plt.savefig('performance_metrics_bar.png', dpi=150, bbox_inches='tight', facecolor='white')
 plt.close()
 print("Done: performance_metrics_bar.png")

@@ -1,8 +1,3 @@
-import os
-from pathlib import Path
-BASE_DIR = Path(os.environ.get('PRISMA_OUT_DIR', str(Path(__file__).resolve().parent.parent / 'figures')))
-OUTPUT_PNG = BASE_DIR / 'database_contributions_pie.png'
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -134,6 +129,6 @@ fig.legend(
 
 plt.tight_layout()
 plt.subplots_adjust(bottom=0.15)
-plt.savefig(OUTPUT_PNG, dpi=150, bbox_inches='tight', facecolor='white')
+plt.savefig('database_contributions_pie.png', dpi=150, bbox_inches='tight', facecolor='white')
 plt.close()
 print('Generated database_contributions_pie.png')

@@ -1,8 +1,3 @@
-import os
-from pathlib import Path
-BASE_DIR = Path(os.environ.get('PRISMA_OUT_DIR', str(Path(__file__).resolve().parent.parent / 'figures')))
-OUTPUT_PNG = BASE_DIR / 'controller_combinations_bar.png'
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -35,6 +30,6 @@ for spine in ax.spines.values():
 for bar, count in zip(bars, counts):
     ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1, str(count), ha='center', va='bottom', color=TEXT_COLOR, fontweight='bold', fontsize=13)
 plt.tight_layout()
-plt.savefig(OUTPUT_PNG, dpi=150, bbox_inches='tight', facecolor='white')
+plt.savefig('controller_combinations_bar.png', dpi=150, bbox_inches='tight', facecolor='white')
 plt.close()
 print("Done: controller_combinations_bar.png")
