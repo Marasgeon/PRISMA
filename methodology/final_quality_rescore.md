@@ -3,7 +3,7 @@
 
 ## Provenance
 
-Source full texts (local): `/home/genghis/Downloads/paperv9/Verify/26/tmp/`
+Source full texts (local): the canonical full-text extractions used to score the 13 papers; see the verification_reports/ folder for per-paper evidence files.
 (root, ~50 KB per paper) and `.../tmp/per_paper/` (~10 KB excerpts).
 Rubric anchors (D1-D6, max 13) in `00_rubric_anchors.md`. Provisional
 matrix + per-paper reports in `13_summary_matrix_and_kappa.md`. Corrected
@@ -475,8 +475,7 @@ The rescore reproduces all 13 published per-paper totals exactly. The
 per-dimension evidence is grounded in the full texts of all 13 papers
 (074 was re-scored from its full JAMRIS 2022 body, located at
 `/run/media/genghis/SANDISK128/1.STATE_OF_THE_ART_DESKTOP_FILES/Verify/26/possible_additional_papers/Thi et al. - 2022 - Robust H∞Fuzzy Approach Design Via Takagi-Sugeno Descriptor Model. Application for 2-DOF Serial Mani.pdf`,
-also at `paperv9/Verify/26/...∞...pdf` and
-`paperv9/Version8/Verify/26/...∞...pdf`).
+also at `(see the verification_reports/ folder; the same PDF is mirrored in two v9 snapshots)`.
 
 Key per-dimension observations:
 
