@@ -1,8 +1,3 @@
-import os
-from pathlib import Path
-BASE_DIR = Path(os.environ.get('PRISMA_OUT_DIR', str(Path(__file__).resolve().parent.parent / 'figures')))
-OUTPUT_PNG = BASE_DIR / 'validation_methods_pie.png'
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -53,6 +48,6 @@ centre_circle = plt.Circle((0, 0), 1 - 0.35, fc='white', ec='white', linewidth=2
 ax.add_artist(centre_circle)
 
 plt.tight_layout()
-plt.savefig(OUTPUT_PNG, dpi=300, bbox_inches='tight', facecolor='white')
+plt.savefig('validation_methods_pie.png', dpi=300, bbox_inches='tight', facecolor='white')
 plt.close()
 print('Generated validation_methods_pie.png')
