@@ -1,0 +1,80 @@
+flowchart TD
+    %% Professional Look colorscheme - same as flowchart2.txt
+    classDef startNode fill:#D6E0EC,stroke:#1F3A5F,stroke-width:2px,color:#1A2B3C,font-weight:bold
+    classDef assessNode fill:#EFE4C7,stroke:#B8860B,stroke-width:2px,color:#1A2B3C,font-weight:bold
+    classDef includedNode fill:#CFE0D0,stroke:#2D6A4F,stroke-width:3px,color:#1A2B3C,font-weight:bold
+    classDef excludedNode fill:#E6D0D4,stroke:#8B2D3D,stroke-width:2px,color:#1A2B3C,font-weight:bold
+    classDef totalExcludedNode fill:#D4B8BC,stroke:#8B2D3D,stroke-width:3px,color:#1A2B3C,font-weight:bold
+    classDef startBox fill:#D6E0EC,stroke:#1F3A5F,stroke-width:3px,color:#1A2B3C
+    classDef assessBox fill:#EFE4C7,stroke:#B8860B,stroke-width:3px,color:#1A2B3C
+    classDef includedBox fill:#CFE0D0,stroke:#2D6A4F,stroke-width:3px,color:#1A2B3C
+
+    A["Records identified from<br/>multiple databases<br/><b>(n = 15,811)</b>"]:::startNode
+    B["Records after duplicates<br/>removed per database<br/><b>(n = 15,756)</b>"]:::assessNode
+    C["Records screened by<br/>title & abstract<br/><b>(n = 15,756)</b>"]:::assessNode
+    X1["Records excluded at<br/>title & abstract screening<br/><b>(n = 15,458)</b><br/>*Not fuzzy control &<br/>robotic manipulator &<br/>descriptor/singular dynamics"]:::excludedNode
+    D["Records retained after<br/>title & abstract screening<br/><b>(n = 298)</b>"]:::assessNode
+    E["Records after year filter<br/>2016-2026<br/><b>(n = 155)</b>"]:::assessNode
+    X2["Records excluded by<br/>year filter 2016-2026<br/><b>(n = 143)</b>"]:::excludedNode
+    F["Records after merged-database<br/>deduplication<br/><b>(n = 106)</b>"]:::assessNode
+    X3["Non-English / retracted<br/>papers excluded<br/><b>(n = 5)</b>"]:::excludedNode
+    G["Records after language<br/>& retraction filter<br/><b>(n = 101)</b>"]:::includedNode
+
+    A --> B
+    B --> C
+    C --> X1
+    C --> D
+    D --> E
+    D --> X2
+    E --> F
+    F --> X3
+    F --> G
+
+    %% Apply subgraph backgrounds
+    subgraph IDENT["IDENTIFICATION"]
+        direction TB
+        A
+    end
+    IDENT:::startBox
+
+    subgraph DEDUP["DEDUPLICATION"]
+        direction TB
+        B
+    end
+    DEDUP:::assessBox
+
+    subgraph SCREEN["TITLE & ABSTRACT SCREENING"]
+        direction TB
+        C
+        D
+    end
+    SCREEN:::assessBox
+
+    subgraph YEAR["YEAR FILTER"]
+        direction TB
+        E
+    end
+    YEAR:::assessBox
+
+    subgraph MERGE["MERGED DATABASE DEDUPLICATION"]
+        direction TB
+        F
+    end
+    MERGE:::assessBox
+
+    subgraph LANG["LANGUAGE FILTER"]
+        direction TB
+        G
+    end
+    LANG:::includedBox
+
+    %% Link styles (in edge-declaration order)
+    linkStyle 0 stroke:#1F3A5F,stroke-width:2px
+    linkStyle 1 stroke:#1F3A5F,stroke-width:2px
+    linkStyle 2 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 3 stroke:#1F3A5F,stroke-width:2px
+    linkStyle 4 stroke:#1F3A5F,stroke-width:2px
+    linkStyle 5 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 6 stroke:#1F3A5F,stroke-width:2px
+    linkStyle 7 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 8 stroke:#2D6A4F,stroke-width:2px

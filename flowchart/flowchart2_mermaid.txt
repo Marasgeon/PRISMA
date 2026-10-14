@@ -1,0 +1,63 @@
+flowchart TD
+    %% Professional Look colorscheme - using classDef for reliable rendering
+    classDef startNode fill:#D6E0EC,stroke:#1F3A5F,stroke-width:2px,color:#1A2B3C,font-weight:bold
+    classDef assessNode fill:#EFE4C7,stroke:#B8860B,stroke-width:2px,color:#1A2B3C,font-weight:bold
+    classDef includedNode fill:#CFE0D0,stroke:#2D6A4F,stroke-width:3px,color:#1A2B3C,font-weight:bold
+    classDef excludedNode fill:#E6D0D4,stroke:#8B2D3D,stroke-width:2px,color:#1A2B3C,font-weight:bold
+    classDef totalExcludedNode fill:#D4B8BC,stroke:#8B2D3D,stroke-width:3px,color:#1A2B3C,font-weight:bold
+    classDef startBox fill:#D6E0EC,stroke:#1F3A5F,stroke-width:3px,color:#1A2B3C
+    classDef assessBox fill:#EFE4C7,stroke:#B8860B,stroke-width:3px,color:#1A2B3C
+    classDef includedBox fill:#CFE0D0,stroke:#2D6A4F,stroke-width:3px,color:#1A2B3C
+
+    A["Full-text articles assessed<br/>for eligibility<br/><b>(n = 101)</b>"]:::startNode
+    B["Full-text review against<br/>inclusion criteria"]:::assessNode
+
+    A --> B
+
+    D1["Excluded: E1 - No fuzzy controller<br/><b>(n = 2)</b>"]:::excludedNode
+    D2["Excluded: E2 - Not robotic manipulator<br/>(mobile robots, AUVs, exoskeletons)<br/><b>(n = 19)</b>"]:::excludedNode
+    D3["Excluded: E3 - No descriptor/singular dynamics<br/>(includes 14 singular-perturbation papers)<br/><b>(n = 67)</b>"]:::excludedNode
+
+    B --> D1
+    B --> D2
+    B --> D3
+
+    E["Total excluded<br/><b>(n = 88)</b>"]:::totalExcludedNode
+    D1 --> E
+    D2 --> E
+    D3 --> E
+
+    C["Studies included in<br/>qualitative synthesis<br/><b>(n = 13)</b>"]:::includedNode
+    B --> C
+
+    %% Position C horizontally with E using invisible link
+    E ~~~ C
+
+    %% Apply subgraph backgrounds
+    subgraph START["FULL TEXT ASSESMENT"]
+        direction TB
+        A
+    end
+    START:::startBox
+
+    subgraph ASSESS["ELIGIBILITY ASSESSMENT"]
+        direction TB
+        B
+    end
+    ASSESS:::assessBox
+
+    subgraph INCLUDED["INCLUDED"]
+        direction TB
+        C
+    end
+    INCLUDED:::includedBox
+
+    %% Link styles
+    linkStyle 0 stroke:#1F3A5F,stroke-width:2px
+    linkStyle 1 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 2 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 3 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 4 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 5 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 6 stroke:#8B2D3D,stroke-width:2px
+    linkStyle 7 stroke:#2D6A4F,stroke-width:2px

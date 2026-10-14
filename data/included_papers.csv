@@ -1,0 +1,14 @@
+prisma_id,citation_short,year,fuzzy_type,system_type,descriptor,validation
+001,He et al. 2019 SMC,2019,T-S,Space Robot,Yes,Simulation
+009,Pang et al. 2024 Inf. Sci.,2024,T-S,Standard,Yes,Simulation
+013,Jiang et al. 2021 IEEE TSMC,2021,T-S + SMC,1-Link,Yes,Simulation
+016,Nguyen et al. 2021 TIMC,2021,T-S,2-DoF,Yes,Simulation
+020,Lendek et al. 2018 EAAI,2018,T-S,2-DoF,Yes,Simulation
+021,Nguyen Thi et al. 2018 ICIEA,2018,T-S,2-DoF,Yes,Simulation
+030,Nguyen et al. 2018 IFAC,2018,T-S,2-DoF,Yes,Simulation
+046,Nguyen et al. 2018 CDC,2018,T-S,2-DoF,Yes,Simulation
+056,Su and Chang 2023 iFUZZY,2023,T-S,Dual Manipulator,Yes,Simulation
+074,Nguyen Thi et al. 2022 JAMRIS,2022,T-S,2-DoF,Yes,Simulation
+079,Tian and Qiao 2025 IEEE Access,2025,T-S,1-Link,Yes,Simulation
+081,Nguyen and Dao 2023 ICCAIS,2023,T-S,2-DoF,Yes,Simulation
+101,Vafamand 2020 JVC,2020,T-S,Flexible-Joint,Yes,Simulation
