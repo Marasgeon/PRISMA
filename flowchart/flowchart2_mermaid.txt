@@ -1,5 +1,4 @@
 flowchart TD
-    %% Professional Look colorscheme - using classDef for reliable rendering
     classDef startNode fill:#D6E0EC,stroke:#1F3A5F,stroke-width:2px,color:#1A2B3C,font-weight:bold
     classDef assessNode fill:#EFE4C7,stroke:#B8860B,stroke-width:2px,color:#1A2B3C,font-weight:bold
     classDef includedNode fill:#CFE0D0,stroke:#2D6A4F,stroke-width:3px,color:#1A2B3C,font-weight:bold
@@ -30,10 +29,8 @@ flowchart TD
     C["Studies included in<br/>qualitative synthesis<br/><b>(n = 13)</b>"]:::includedNode
     B --> C
 
-    %% Position C horizontally with E using invisible link
     E ~~~ C
 
-    %% Apply subgraph backgrounds
     subgraph START["FULL TEXT ASSESMENT"]
         direction TB
         A
@@ -52,7 +49,6 @@ flowchart TD
     end
     INCLUDED:::includedBox
 
-    %% Link styles
     linkStyle 0 stroke:#1F3A5F,stroke-width:2px
     linkStyle 1 stroke:#8B2D3D,stroke-width:2px
     linkStyle 2 stroke:#8B2D3D,stroke-width:2px

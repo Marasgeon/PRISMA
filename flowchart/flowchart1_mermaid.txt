@@ -1,5 +1,4 @@
 flowchart TD
-    %% Professional Look colorscheme - same as flowchart2.txt
     classDef startNode fill:#D6E0EC,stroke:#1F3A5F,stroke-width:2px,color:#1A2B3C,font-weight:bold
     classDef assessNode fill:#EFE4C7,stroke:#B8860B,stroke-width:2px,color:#1A2B3C,font-weight:bold
     classDef includedNode fill:#CFE0D0,stroke:#2D6A4F,stroke-width:3px,color:#1A2B3C,font-weight:bold
@@ -30,7 +29,6 @@ flowchart TD
     F --> X3
     F --> G
 
-    %% Apply subgraph backgrounds
     subgraph IDENT["IDENTIFICATION"]
         direction TB
         A
@@ -68,7 +66,6 @@ flowchart TD
     end
     LANG:::includedBox
 
-    %% Link styles (in edge-declaration order)
     linkStyle 0 stroke:#1F3A5F,stroke-width:2px
     linkStyle 1 stroke:#1F3A5F,stroke-width:2px
     linkStyle 2 stroke:#8B2D3D,stroke-width:2px
